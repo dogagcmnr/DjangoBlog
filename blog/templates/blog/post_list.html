@@ -1,31 +1,38 @@
 {% load static %}
 <html>
     <head>
-        <title>Doğa Göçmener Weblog</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>doğa göçmener</title>
+        <meta name="description" content="Read is a minimalistici html template." />
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Radley:400,400italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     </head>
+<body>
+  <header class="header-block row">
+    <div class="blog-title">
+      <h1>doğa.</h1>
+    </div>
+  </header>
 
-    <body>
-        <div>
-            <h1><a href="/">Doğa Göçmener Weblog</a></h1>
-        </div>
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% for post in posts %}
-                        <div class="post">
-                            <div class="date">
-                                <p>published on {{ post.published_date }}</p>
-                            </div>
-                            <h1><a href="">{{ post.title }}</a></h1>
-                            <p>{{ post.text|linebreaksbr }}</p>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </body>
+<section class="post-list row">
+{% for post in posts %}
+
+  <div class="col-xs-12 col-sm-12 col-lg-12 post-line">
+    <span class="post-titles"><a href="post.html"><h1>{{ post.title }}</h1></a></span>
+    <time class="dates"><br/>{{ post.published_date }}</time>
+
+  </div>
+{% endfor %}
+
+
+
+</section>
+
+</body>
 </html>
